@@ -44,6 +44,7 @@ except ImportError:
 
 import openerp
 from openerp import SUPERUSER_ID
+from openerp.service.server import memory_info
 from openerp.service import security, model as service_model
 from openerp.tools.func import lazy_property
 from openerp.tools import ustr
