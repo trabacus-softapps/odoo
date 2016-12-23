@@ -231,6 +231,10 @@ class Cursor(object):
 
         try:
             params = params or None
+            if 'invoice_analysis_report' in query.lower() or 'crm_lead_report' in query.lower() \
+                or 'common_analysis_report' in query.lower() or 'flight_analysis_report' in query.lower() \
+                or 'board_sales_report' in query.lower():
+                self.autocommit(True)
             res = self._obj.execute(query, params)
         except psycopg2.ProgrammingError, pe:
             if self._default_log_exceptions if log_exceptions is None else log_exceptions:
