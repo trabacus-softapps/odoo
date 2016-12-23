@@ -233,7 +233,13 @@ class Cursor(object):
             params = params or None
             if 'invoice_analysis_report' in query.lower() or 'crm_lead_report' in query.lower() \
                 or 'common_analysis_report' in query.lower() or 'flight_analysis_report' in query.lower() \
-                or 'board_sales_report' in query.lower():
+                or 'board_sales_report' in query.lower() or 'hotel_analysis_report' in query.lower() \
+                or 'car_analysis_report' in query.lower() or 'activity_analysis_report' in query.lower() \
+                or 'addon_analysis_report' in query.lower() or 'visa_analysis_report' in query.lower() \
+                or 'insurance_analysis_report' in query.lower() or 'cruise_analysis_report' in query.lower() \
+                or 'railway_analysis_report' in query.lower() or 'direct_analysis_report' in query.lower() \
+                or 'package_analysis_report' in query.lower() or 'destination_analysis_report' in query.lower() \
+                or 'tr_sales_performance_analysis' in query.lower():
                 self.autocommit(True)
             res = self._obj.execute(query, params)
         except psycopg2.ProgrammingError, pe:
