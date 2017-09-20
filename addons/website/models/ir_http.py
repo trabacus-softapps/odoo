@@ -116,6 +116,8 @@ class ir_http(orm.AbstractModel):
                         request.lang = request.website.default_lang_code
 
             request.context['lang'] = request.lang
+            if request.httprequest.session.get('lang_code'):
+                request.context['lang'] = request.httprequest.session.get('lang_code')
             if not request.context.get('tz'):
                 request.context['tz'] = request.session['geoip'].get('time_zone')
             if not func:
